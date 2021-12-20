@@ -604,6 +604,17 @@ class ContractsController extends Controller
 
           return response()->json($list);
       }
+
+      public function ta_get_trust_anchor_user(Request $request, $id, $user_id)
+      {
+          Log::debug('ContractsController ta_get_trust_anchor_user');
+
+          $user = User::findOrFail($id);
+
+          $tau = TrustAnchorUser::where('uid', $user_id)->first();
+
+          return response()->json($tau);
+      }
       
       public function ta_assign_crypto_address(Request $request, $id)
       {
