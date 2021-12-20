@@ -87,6 +87,7 @@ Route::group(['middleware' => ['api', $throttleLimits]], function() {
 
         Route::get('contracts/trust-anchor/{id}/ta-get-trust-anchors', 'ContractsController@ta_get_trust_anchors');
         Route::post('contracts/trust-anchor/{id}/ta-get-trust-anchor-users', 'ContractsController@ta_get_trust_anchor_users');
+        Route::post('contracts/trust-anchor/{id}/ta-get-trust-anchor-user/{user_id}', 'ContractsController@ta_get_trust_anchor_user');
         Route::post('contracts/trust-anchor/{id}/ta-assign-crypto-address', 'ContractsController@ta_assign_crypto_address');
 
         Route::get('contracts/trust-anchor/{id}/ta-get-user-wallet-addresses', 'ContractsController@ta_get_user_wallet_addresses');
